@@ -13,7 +13,6 @@ window.onload = function(){
         squares[i].textContent = "X"
         counter++
         boardstate.splice(i,1,"X")
-        console.log(boardstate)
       }
       else if (counter % 2 == 1 && !(squares[i].classList.contains("X") || squares[i].classList.contains("O"))){
         squares[i].classList.add("O")
@@ -22,6 +21,14 @@ window.onload = function(){
         boardstate.splice(i,1,"O")
       }
 
+    })
+
+    squares[i].addEventListener('mouseover',function(){
+      squares[i].classList.add("hover")
+    })
+
+    squares[i].addEventListener('mouseout',function(){
+      squares[i].classList.remove("hover")
     })
 
 
